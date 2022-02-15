@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CalcSalario</string>
+    <string name="resultado">Resultado</string>
+    <string name="validadeSalario">Imfrome salário:</string>
+    <string name="Numdep">Numero de dependentes:</string>
+    <string name="TipoPlano">informe seu plano de sáude:</string>
+    <string name="Vatrans">informe seu vale transporte:</string>
+    <string name="vaAli">informe seu vale alimentação:</string>
+    <string name="VaRef">informe seu refeição:</string>
+</resources>

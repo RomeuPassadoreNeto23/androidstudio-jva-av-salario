@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        style="@style/text_view"
+        android:text="Calculadora de salario" />
+
+    <TextView
+        style="@style/text_view"
+        android:text="Salario bruto:"/>
+    <EditText
+        android:id="@+id/salariobruto"
+        style="@style/edit_text" />
+
+    <TextView
+        style="@style/text_view"
+        android:text="Numero de dependentes:"/>
+    <EditText
+        android:id="@+id/depen"
+        style="@style/edit_text" />
+
+    <TextView
+        style="@style/text_view"
+        android:text="Tipo de plano de saúde:"/>
+    <EditText
+        android:id="@+id/tpPlanoSaude"
+        style="@style/edit_text2" />
+    <TextView
+        style="@style/text_view"
+        android:text="Vale Transporte:(Sim/Não)"/>
+    <EditText
+        android:id="@+id/vlTransporte"
+        style="@style/edit_text2" />
+    <TextView
+        style="@style/text_view"
+        android:text="Vale Aimentação:(Sim/Não)"/>
+    <EditText
+        android:id="@+id/vaAlimentacao"
+        style="@style/edit_text2" />
+    <TextView
+        style="@style/text_view"
+        android:text="Vale Refeição:(Sim/Não)"/>
+    <EditText
+        android:id="@+id/vaRefeicao"
+        style="@style/edit_text2" />
+
+    <Button
+        android:id="@+id/bt_resultado"
+        style="@style/EstiloBase"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/resultado"/>
+        <TextView
+            android:id="@+id/resultado"
+            android:text="@string/resultado"
+            style="@style/text_view"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
