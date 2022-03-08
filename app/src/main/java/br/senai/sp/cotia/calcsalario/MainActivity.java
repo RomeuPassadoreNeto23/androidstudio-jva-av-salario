@@ -72,16 +72,16 @@ private Button bt_resultado ,bt_lipar;
 
                   }
                  if (salarioBruto <= 1045.00) {
-                     inns =  0.10 * salarioBruto;
+                     inns = salarioBruto * 0.010 ;
 
                  }else if (salarioBruto <= 2089.60) {
-                     inns = 0.9 * salarioBruto - 15;
+                     inns = 0.09 * salarioBruto - 15;
 
                  }else if (salarioBruto <= 3134.40 ) {
-                     inns = 0.12 * salarioBruto - 78.38;
+                     inns = 0.012 * salarioBruto - 78.38;
 
                  }else if (salarioBruto <= 6101.06) {
-                     inns = 0.14 *  salarioBruto - 141.07;
+                     inns = 0.014 *  salarioBruto - 141.07;
 
                  }else {
                      inns = 713.08;
@@ -125,7 +125,7 @@ private Button bt_resultado ,bt_lipar;
                  double calinss = salarioBruto - inns - 189.59 * dePendete;
 
                  if(calinss <= 1903.98) {
-                     calinss  = calinss;
+                     calinss  = 0;
                  }else if(calinss <= 2826.65) {
                      calinss = calinss * 0.075 - 142.80;
                  }else if (calinss <= 3751.05){
