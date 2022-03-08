@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-private EditText salariobruto,depen,tpPlanoSaude,vlTransporte,vaRefeicao;
+private EditText salariobruto,depen;
+private Spinner spinner;
+private RadioGroup radioGroupvt,radioGroupa,radioGroupr;
 private TextView resultado;
-private Button bt_resultado;
+private Button bt_resultado ,bt_lipar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,52 +22,48 @@ private Button bt_resultado;
         setContentView(R.layout.activity_main);
          salariobruto = findViewById(R.id.salariobruto);
          depen = findViewById(R.id.depen);
-         tpPlanoSaude = findViewById(R.id.tpPlanoSaude);
-         vlTransporte = findViewById(R.id.vlTransporte);
-         vaRefeicao = findViewById(R.id.vaRefeicao);
          resultado = findViewById(R.id.resultado);
          bt_resultado = findViewById(R.id.bt_resultado);
+         bt_lipar = findViewById(R.id.bt_limpar);
+         spinner = findViewById(R.id.spinnerps);
+         radioGroupvt = findViewById(R.id.radio_gupovt);
+         radioGroupa = findViewById(R.id.radio_gupova);
+         radioGroupr = findViewById(R.id.radio_gupovr);
 
          bt_resultado.setOnClickListener( v -> {
              if (salariobruto.getText().toString().isEmpty()){
                  salariobruto.setError(getString(R.string.validadeSalario));
              }else if (depen.getText().toString().isEmpty()) {
                  depen.setError(getString(R.string.Numdep));
-             }else if(tpPlanoSaude.getText().toString().isEmpty()) {
-                 tpPlanoSaude.setError(getString(R.string.TipoPlano));
-             }else if(vlTransporte.getText().toString().isEmpty()) {
-                 vlTransporte.setError(getString(R.string.Vatrans));
-             }else if(vaRefeicao.getText().toString().isEmpty()) {
-                 vaRefeicao.setError(getString(R.string.VaRef));
              }else {
-                 double  salarioBruto ,resPlanosaude =0;
+                 double  salarioBruto ,resPlanosaude = 0 ,inns = 0,vt = 0 , va = 0,vr = 0,irrf = 0 ,sl = 0;
                  double res ;
                  int dePendete;
-                 String tipoPlanosaude,tipovaliTranspor,valirefeicao ;
+
                  salarioBruto = Double.parseDouble(salariobruto.getText().toString());
-                  dePendete = Integer.parseInt(depen.getText().toString());
-                  tipoPlanosaude =  tpPlanoSaude.getText().toString();
-                  if(tipoPlanosaude == "Standard"){
+                 dePendete = Integer.parseInt(depen.getText().toString());
+
+                  if( spinner.getSelectedItemPosition() == 0){
                       if(salarioBruto <= 3000.00){
                        resPlanosaude = 60.00;
                       }else {
                           resPlanosaude = 80.00;
                       }
-                  }else if(tipoPlanosaude == "basico"){
+                  }else if(spinner.getSelectedItemPosition() == 1){
                       if(salarioBruto <= 3000.00){
                           resPlanosaude = 80.00;
                       }else {
                           resPlanosaude = 110.00;
                       }
 
-                  }else if(tipoPlanosaude == "Super"){
+                  }else if(spinner.getSelectedItemPosition() == 2){
                       if(salarioBruto <= 3000.00){
                           resPlanosaude = 95.00;
                       }else {
                           resPlanosaude = 135.00;
                       }
 
-                  }else if(tipoPlanosaude == "Master"){
+                  }else if(spinner.getSelectedItemPosition() == 3){
                       if(salarioBruto <= 3000.00){
                           resPlanosaude = 130.00;
                       }else {
@@ -71,12 +71,87 @@ private Button bt_resultado;
                       }
 
                   }
+                 if (salarioBruto <= 1045.00) {
+                     inns =  0.10 * salarioBruto;
+
+                 }else if (salarioBruto <= 2089.60) {
+                     inns = 0.9 * salarioBruto - 15;
+
+                 }else if (salarioBruto <= 3134.40 ) {
+                     inns = 0.12 * salarioBruto - 78.38;
+
+                 }else if (salarioBruto <= 6101.06) {
+                     inns = 0.14 *  salarioBruto - 141.07;
+
+                 }else {
+                     inns = 713.08;
+                 }
+                 switch (radioGroupvt.getCheckedRadioButtonId()){
+                     case R.id.radio_buttonvts:
+                         vt = 0.6 * salarioBruto;
+                         break;
+                     case R.id.radio_buttonvtn:
+                         vt = 0;
+                         break;
+                 }
+                 switch (radioGroupa.getCheckedRadioButtonId()){
+                     case R.id.radio_buttonvas:
+                         if(salarioBruto <= 3000.00) {
+                             va = 15.00;
+                         }else if(salarioBruto <= 5000.00) {
+                             va = 25.00;
+                         }else {
+                             va = 35.00;
+                         }
+                         break;
+                     case R.id.radio_buttonvan:
+                         va = 0;
+                         break;
+                 }
+                 switch (radioGroupr.getCheckedRadioButtonId()){
+                     case R.id.radio_buttonvrs:
+                         if(salarioBruto <= 3000.00) {
+                             vr = 2.60 * 22;
+                         }else if (salarioBruto <= 5000.00) {
+                             vr = 3.65 * 22;
+                         }else {
+                             vr = 6.50 * 22;
+                         }
+                         break;
+                     case R.id.radio_buttonvrn:
+                         vr = 0;
+                         break;
+                 }
+                 double calinss = salarioBruto - inns - 189.59 * dePendete;
+
+                 if(calinss <= 1903.98) {
+                     calinss  = calinss;
+                 }else if(calinss <= 2826.65) {
+                     calinss = calinss * 0.075 - 142.80;
+                 }else if (calinss <= 3751.05){
+                     calinss = calinss * 0.15 - 354.80;
+                 }else if(calinss <= 4664.68) {
+                     calinss = calinss * 0.225 - 636.13;
+                 }else {
+                     calinss = calinss * 0.275 - 869.36;
+                 }
+                  sl = salarioBruto - inns  - vt - vr - va - calinss - resPlanosaude;
+                 resultado.setText("" + sl);
+
+
+
+
+
+
                   
 
 
 
              }
 
+         });
+         bt_lipar.setOnClickListener( v -> {
+             resultado.setText(null);
          });
     }
 }

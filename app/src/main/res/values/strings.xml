@@ -7,4 +7,17 @@
     <string name="Vatrans">informe seu vale transporte:</string>
     <string name="vaAli">informe seu vale alimentação:</string>
     <string name="VaRef">informe seu refeição:</string>
+     <string-array name="planoSaude">
+         <item>Standard</item>
+         <item>Basico</item>
+         <item>Super</item>
+         <item>Master</item>
+     </string-array>
+     <string name="Sim">sim</string>
+    <string name="Não">Nao</string>
+    <string name="lipar">limpar</string>
+
+
+
+
 </resources>
