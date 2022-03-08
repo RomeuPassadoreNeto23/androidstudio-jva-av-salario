@@ -88,7 +88,7 @@ private Button bt_resultado ,bt_lipar;
                  }
                  switch (radioGroupvt.getCheckedRadioButtonId()){
                      case R.id.radio_buttonvts:
-                         vt = 0.6 * salarioBruto;
+                         vt = 0.06 * salarioBruto;
                          break;
                      case R.id.radio_buttonvtn:
                          vt = 0;
