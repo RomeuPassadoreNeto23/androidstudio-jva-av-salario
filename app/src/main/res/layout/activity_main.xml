@@ -36,6 +36,8 @@
         style="@style/text_view"
         android:text="Tipo de plano de saúde:"/>
         <Spinner
+
+            style="@style/estilo_spinner"
             android:id="@+id/spinnerps"
             android:entries="@array/planoSaude"
             android:layout_width="match_parent"
@@ -44,16 +46,19 @@
         style="@style/text_view"
         android:text="Vale Transporte:(Sim/Não)"/>
          <RadioGroup
+
              android:id="@+id/radio_gupovt"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:orientation="horizontal">
              <RadioButton
+                 android:textColor="@color/white"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:text="@string/Não"
                  android:id="@+id/radio_buttonvtn"/>
              <RadioButton
+                 android:textColor="@color/white"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:text="@string/Sim"
@@ -70,11 +75,13 @@
             android:orientation="horizontal">
 
             <RadioButton
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Não"
                 android:id="@+id/radio_buttonvan"/>
             <RadioButton
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Sim"
@@ -85,17 +92,21 @@
         style="@style/text_view"
         android:text="Vale Refeição:(Sim/Não)"/>
         <RadioGroup
+            style="@style/estilo_radio_button"
+
             android:id="@+id/radio_gupovr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Não"
                 android:id="@+id/radio_buttonvrn"/>
             <RadioButton
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Sim"
