@@ -20,14 +20,14 @@
         android:text="Salario bruto:"/>
     <EditText
         android:id="@+id/salariobruto"
-        style="@style/edit_text2" />
+        style="@style/edit_text" />
 
     <TextView
         style="@style/text_view"
         android:text="Numero de dependentes:"/>
     <EditText
         android:id="@+id/depen"
-        style="@style/edit_text2" />
+        style="@style/edit_text" />
 
     <TextView
         style="@style/text_view"

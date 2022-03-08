@@ -136,7 +136,7 @@ private Button bt_resultado ,bt_lipar;
                      calinss = calinss * 0.275 - 869.36;
                  }
                   sl = salarioBruto - inns  - vt - vr - va - calinss - resPlanosaude;
-                 resultado.setText("" + sl);
+                 resultado.setText(String.format("salario liquido %10.2f" ,sl));
 
 
 
