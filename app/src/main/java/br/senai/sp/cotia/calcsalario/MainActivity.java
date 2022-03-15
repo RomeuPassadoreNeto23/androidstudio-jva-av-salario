@@ -72,16 +72,16 @@ private Button bt_resultado ,bt_lipar;
 
                   }
                  if (salarioBruto <= 1045.00) {
-                     inns = salarioBruto * 0.010 ;
+                     inns = salarioBruto * 0.075 ;
 
                  }else if (salarioBruto <= 2089.60) {
-                     inns = 0.09 * salarioBruto - 15;
+                     inns = 0.09 * salarioBruto - 15.68;
 
                  }else if (salarioBruto <= 3134.40 ) {
-                     inns = 0.012 * salarioBruto - 78.38;
+                     inns = 0.12 * salarioBruto - 78.38;
 
                  }else if (salarioBruto <= 6101.06) {
-                     inns = 0.014 *  salarioBruto - 141.07;
+                     inns = 0.14 *  salarioBruto - 141.07;
 
                  }else {
                      inns = 713.08;
